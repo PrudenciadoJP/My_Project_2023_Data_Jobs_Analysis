@@ -59,6 +59,7 @@ Country Analysis
 - Excel: Used for data cleaning and basic analysis
 - SQL Server Management: Utilized for performing Exploratory Data Analysis (EDA) and querying data to gain deeper insights.
 - Power BI: Applied for Extract, Transform, and Load (ETL) processes, data visualization, data cleaning, and creating Data Analysis Expressions (DAX)
+- •	ChatGPT: For Improving Sentence and getting better suggestions and recommendations.
 
 ### Extract Transform and Load Data Using Excel
 Extract 
