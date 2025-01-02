@@ -335,6 +335,27 @@ GROUP BY job_country
 ORDER BY job_postings DESC;
 ~~~
 
+- Displays Top 10 popular technical skills and correlate with higher-paying roles?
+
+~~~
+-- What are the popular technical skills required for data-related jobs, and do these skills correlate with higher-paying roles?
+
+SELECT TOP (10) skills.job_skills,
+       COUNT(skills.job_skills) number_of_jobposted,
+       ROUND(AVG(CASE
+                     WHEN jobs.salary_rate = 'year' THEN _salary_year_avg
+                 END), 0) AS avg_year_sal,
+       ROUND(AVG(CASE
+                     WHEN jobs.salary_rate = 'hour' THEN _salary_hour_avg
+                 END), 0) AS avg_hour_sal,
+       ROUND(CAST(COUNT(skills.job_skills) AS FLOAT) /
+               (SELECT COUNT(*)
+                FROM jobs_skills) * 100, 0) AS skills_likelihood
+FROM jobs_skills AS skills
+INNER JOIN data_jobs AS jobs ON skills.job_id = jobs.job_id
+GROUP BY job_skills
+ORDER BY skills_likelihood DESC;
+~~~
 ### Power BI Data Visualization
 
 1.	What types of data-related jobs are available in the market, and which were most in demand in 2023?
@@ -392,6 +413,7 @@ Key Insights
   - Tableau ranks lowest among the top 5 skills, suggesting that while it is valuable, it is not as universally required.
 
 Effect of Insights
+
 - Employer Priorities:
   - SQL and Python are essential foundational skills for most data-related roles.
   - Specialized tools like Tableau may be role-specific or secondary in importance compared to programming languages.
@@ -499,7 +521,7 @@ Effect of Insights
 - Enhanced Visibility:
   -	Applying during the peak posting time (12 PM–6 PM) aligns with recruiter activity, increasing visibility.
 
-Recommended Strategy
+Recommended Action
 
 - Timing Your Applications:
   - Target your applications on Wednesdays in August during the 12 PM–6 PM window.
@@ -521,15 +543,19 @@ Type: Clustered Bar Chart
 - X-Axis: Count of job postings (calculated using the DAX COUNT function).
 
 Key Insights:
+
 -	LinkedIn is the leading platform for data-related job postings, offering the highest number of opportunities, Platforms like AI-Jobs.net and Indeed also provide substantial job listings, catering to both specialized and general audiences.
 
 Effect of Insights:
+
 - Focusing on LinkedIn increases your access to a broader range of jobs, but also exposes you to higher competition from other applicants. Using platforms with fewer listings, such as Ladders and Snagajob, may lead to less competition, potentially improving your chances for roles with fewer applicants.
 
 Recommended Actions:
+
 -	Primary Focus: Prioritize applying on LinkedIn, leveraging its extensive network and job listings for data-related roles, or Explore Ladders and Snagajob to identify hidden opportunities with less competition and regularly update and optimize your profiles on these platforms to improve visibility and attract recruiters.
 
 ### Conclusion
+
 This project highlights the essential factors for navigating a data-related career. It combines data analysis and visualization to guide aspiring professionals in making informed decisions about their career paths. I hope it inspires others to embrace this field, master the necessary skills, and achieve their career goals.
 
 
