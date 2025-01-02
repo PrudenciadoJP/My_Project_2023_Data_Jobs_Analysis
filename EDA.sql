@@ -156,12 +156,14 @@ FROM data_jobs
 GROUP BY job_country
 ORDER BY job_postings DESC;
 
---2.	What are the popular technical skills required for data-related jobs, and do these skills correlate with higher-paying roles?
-SELECT	skills.job_skills,
-		ROUND(AVG(job._salary_year_avg),0) AS year_salary,
-		ROUND(CAST(COUNT(skills.job_skills) AS FLOAT) / (SELECT COUNT(*) FROM data_jobs) * 100, 0) AS skills_likelihood
+-- What are the popular technical skills required for data-related jobs, and do these skills correlate with higher-paying roles?
+SELECT	TOP (10) skills.job_skills,
+		COUNT(skills.job_skills) number_of_jobposted,
+		ROUND(AVG(CASE WHEN jobs.salary_rate = 'year' THEN _salary_year_avg END), 0) AS avg_year_sal,
+		ROUND(AVG(CASE WHEN jobs.salary_rate = 'hour' THEN _salary_hour_avg END), 0) AS avg_hour_sal,
+		ROUND(CAST(COUNT(skills.job_skills) AS FLOAT) / (SELECT COUNT(*) FROM jobs_skills) * 100, 0) AS skills_likelihood
 FROM jobs_skills AS skills
-INNER JOIN data_jobs AS job
-ON skills.job_id = job.job_id
-GROUP BY skills.job_skills
+INNER JOIN data_jobs AS jobs
+ON skills.job_id = jobs.job_id
+GROUP BY job_skills
 ORDER BY skills_likelihood DESC;
