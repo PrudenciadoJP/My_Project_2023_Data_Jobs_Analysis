@@ -19,7 +19,8 @@ As an aspiring data analyst and former job seeker, I created this project to pro
 4.	What are the best months, weekdays, and times for applicants to apply for work?
 5.	What are the top 5 websites to apply for data-related jobs?
 
-Data Overview
+**Data Overview**
+
 - Dataset Source: [GitHub](https://github.com/lukebarousse/Excel_Data_Analytics_Course/tree/main/0_Resources/Datasets)
 - File Size: 3,754 KB
 Data Structure:
@@ -31,13 +32,13 @@ Table Analysis
 1.	Total number of rows and columns in the dataset.
 2.	The range and scope of the data.
 
-Data-Related Jobs Analysis
+**Data-Related Jobs Analysis**
 
 1.	Types of data-related jobs available and the most popular roles.
 2.	Percentage of work-from-home vs. onsite jobs.
 3.	Percentage of jobs offering health insurance.
 
-Salary Analysis
+**Salary Analysis**
 
 1.	Average yearly/hourly salaries for data-related jobs.
 2.	Correlation between job positions and salary levels.
@@ -45,34 +46,39 @@ Salary Analysis
 4.	Comparison of average yearly salaries for work-from-home and onsite jobs.
 5.	Average yearly salary for jobs offering insurance vs. those without.
 
-Job Platform Analysis
+**Job Platform Analysis**
 
 1.	Top 5 most popular job platforms for data-related jobs.
 
-Date and Time Analysis
+**Date and Time Analysis**
+
 1.	Distribution of job postings by month, weekday, and time.
 
-Country Analysis
+**Country Analysis**
+
 1.	Countries with the highest number of job postings.
 
 ### Tools and Their Applications
 - Excel: Used for data cleaning and basic analysis
 - SQL Server Management: Utilized for performing Exploratory Data Analysis (EDA) and querying data to gain deeper insights.
 - Power BI: Applied for Extract, Transform, and Load (ETL) processes, data visualization, data cleaning, and creating Data Analysis Expressions (DAX)
-- •	ChatGPT: For Improving Sentence and getting better suggestions and recommendations.
+- ChatGPT: For Improving Sentences and getting better suggestions and recommendations.
 
 ### Extract Transform and Load Data Using Excel
-Extract 
+
+**Extract**
+
 - The data was extracted by downloading it from GitHub and importing it into an Excel workbook.
 
-Transform
+**Transform**
+
 The data was transformed using Excel's Power Query for cleaning. This includes:
 - Removing Duplicates
 - Standardize Data 
 - Removing Blank and Null data
 - Removing Unnecessary Data
 
-Tables Used:
+**Tables Used:**
 Job_data table
 
 ![image](https://github.com/user-attachments/assets/e7e10e0a-c574-4255-a992-7d27f3c2e897)
@@ -81,8 +87,9 @@ Jobs_skills table
 
 ![image](https://github.com/user-attachments/assets/3f498aea-5475-40a3-b731-55e3a46da781)
 
-Load
-After transforming the data, the cleaned data was loaded into a new Excel workbook for further use.
+**Load**
+
+- After transforming the data, the cleaned data was loaded into a new Excel workbook for further use.
 
 ![image](https://github.com/user-attachments/assets/159cd566-3429-451b-9885-cc1ac376edcc)
 
@@ -144,7 +151,7 @@ FROM jobs_skills; -- 167266 number of rows
 EXEC SP_HELP jobs_skills; -- 3 columns
 ~~~
 
-- Display data-related jobs and number of jobs posted in the dataset
+- Display data-related jobs and the number of jobs posted in the dataset
 
 ~~~
 --Data-Related Jobs Analysis
@@ -362,14 +369,14 @@ ORDER BY skills_likelihood DESC;
 
 ![image](https://github.com/user-attachments/assets/f928b490-8ee8-4c24-a68f-bed0326f9068)
 
-Visualization Overview
+**Visualization Overview**
 
 Type: Stacked Bar Chart
 
 - Y-Axis: Grouped Job Titles (e.g., Data Analyst, Data Scientist, etc.)
 - X-Axis: Count of Job Postings (using DAX's COUNT() formula for aggregation).
 
-Key Insights
+**Key Insights**
 
 - High Demand Roles:
   - Data Analyst holds the top position for job postings, indicating its popularity and demand in the market.
@@ -377,14 +384,14 @@ Key Insights
 - Low Demand Roles:
   - Cloud Engineer has the fewest job postings, suggesting it may be an emerging or niche role compared to others.
 
-Effect of Insights
+**Effect of Insights**
 
--	Competition:
+- Competition:
   - Roles like Data Analyst and Data Scientist are highly competitive due to their established demand and popularity.
 - Emerging Opportunities:
   - Roles such as Cloud Engineer, Software Engineer, and Machine Learning Engineer offer less saturated markets and opportunities for early specialization.
 
-Recommended Actions
+**Recommended Actions**
 
 - Assess Market Trends:
   - Consider the industry demand and growth trends for specific roles before making career decisions.
@@ -397,14 +404,14 @@ Recommended Actions
 
 ![image](https://github.com/user-attachments/assets/66bc5cb4-b3cc-4414-aefa-c3d6585042b5)
 
-Visualization Overview
+**Visualization Overview**
 
 Type: Donut Chart
 
 - Legend: Top 5 most posted skills in job requirements (e.g., SQL, Python, etc.).
 - Values: Count of each skill's occurrences, converted to percentages of the grand total (using DAX's COUNT() formula).
 
-Key Insights
+**Key Insights**
 
 - High Demand Skills:
   - SQL is the most frequently required skill, highlighting its significance in data-related roles.
@@ -412,13 +419,13 @@ Key Insights
 - Low Demand Skills:
   - Tableau ranks lowest among the top 5 skills, suggesting that while it is valuable, it is not as universally required.
 
-Effect of Insights
+**Effect of Insights**
 
 - Employer Priorities:
   - SQL and Python are essential foundational skills for most data-related roles.
   - Specialized tools like Tableau may be role-specific or secondary in importance compared to programming languages.
 
-Recommended Actions
+**Recommended Actions**
 
 - Skill Development:
   - Prioritize learning and mastering SQL and Python to meet the core requirements of most data-related jobs.
@@ -431,7 +438,7 @@ Recommended Actions
 
 ![image](https://github.com/user-attachments/assets/00e09e09-4763-443f-9547-eb53f4c1b685)
 
-Visualization Overview
+**Visualization Overview**
 
 Type: Scatter Plot with a Trend Line (Dashed Line)
 
@@ -439,7 +446,7 @@ Type: Scatter Plot with a Trend Line (Dashed Line)
 - X-Axis: Average annual salary for data-related jobs (calculated using CALCULATE(AVERAGE) DAX on salary_rate and salary_year_avg columns).
 - Y-Axis: Average number of required skills per job (calculated by separating skills into a table and using COUNT() and AVERAGE DAX functions).
 
-Key Insights
+**Key Insights**
 
 - Correlation Between Skills and Salary:
   - A positive correlation exists between the number of required technical skills and the average annual salary.
@@ -447,7 +454,7 @@ Key Insights
 - Senior Roles Demand More Skills:
   - Roles such as Senior Data Engineer exhibit higher skill requirements and offer higher compensation.
 
-Effect of Insights
+**Effect of Insights**
 
 - Career Path:
   - Senior and specialized roles require advanced and diverse skill sets.
@@ -455,7 +462,7 @@ Effect of Insights
 - Skill Gap Awareness:
   - For aspiring professionals, recognizing the skill requirements for high-level roles is critical to career planning.
 
-Recommended Actions
+**Recommended Actions**
 
 - Skill Assessment:
   - Regularly evaluate your technical skills and knowledge to identify areas for improvement.
@@ -469,7 +476,7 @@ Recommended Actions
 
 ![image](https://github.com/user-attachments/assets/05617f3d-e957-4295-ab72-c205a6c1d0bf)
 
-Visualization Overview
+**Visualization Overview**
 
 Line Chart (Monthly Trends)
 
@@ -480,7 +487,7 @@ Best weekdays for the applicants to apply?
 
 ![image](https://github.com/user-attachments/assets/73f1c164-fc27-40b7-89de-675636599cb8)
 
-Visualization Overview
+**Visualization Overview**
 
 Stacked Bar Chart (Weekday Trends)
 
@@ -491,13 +498,13 @@ Best time for the applicants to apply?
 
 ![image](https://github.com/user-attachments/assets/776fa9fa-f0f2-408d-ba1e-45e346672162)
 
-Visualization Overview
+**Visualization Overview**
 
 Clustered Bar Chart (Time Trends)
 - Y-Axis: Time categories (grouped via DAX SWITCH on formatted job_posted_date).
 - X-Axis: Count of job postings (using the COUNT function).
 
-Key Insights
+**Key Insights**
 
 By Month
 
@@ -514,14 +521,14 @@ By Time
 - Optimal Time: Jobs are most frequently posted between 12 PM and 6 PM, aligning with business hours and recruiter activity.
 -	Least Active Time: Early mornings (6 AM–9 AM) have the fewest postings.
  
-Effect of Insights
+**Effect of Insights**
 
 - Higher Competition:
   -	August and Wednesdays see significant job postings, but competition may be intense.
 - Enhanced Visibility:
   -	Applying during the peak posting time (12 PM–6 PM) aligns with recruiter activity, increasing visibility.
 
-Recommended Action
+**Recommended Action**
 
 - Timing Your Applications:
   - Target your applications on Wednesdays in August during the 12 PM–6 PM window.
@@ -535,22 +542,22 @@ Recommended Action
 
 ![image](https://github.com/user-attachments/assets/ca7c7612-d3fd-4469-ac3c-165ab58af332)
 
-Visualization Overview
+**Visualization Overview**
 
 Type: Clustered Bar Chart
 
 - Y-Axis: Job Platforms (cleaned and deduplicated using transformations on the Job_Platform column).
 - X-Axis: Count of job postings (calculated using the DAX COUNT function).
 
-Key Insights:
+**Key Insights:**
 
 -	LinkedIn is the leading platform for data-related job postings, offering the highest number of opportunities, Platforms like AI-Jobs.net and Indeed also provide substantial job listings, catering to both specialized and general audiences.
 
-Effect of Insights:
+**Effect of Insights:**
 
 - Focusing on LinkedIn increases your access to a broader range of jobs, but also exposes you to higher competition from other applicants. Using platforms with fewer listings, such as Ladders and Snagajob, may lead to less competition, potentially improving your chances for roles with fewer applicants.
 
-Recommended Actions:
+**Recommended Actions:**
 
 -	Primary Focus: Prioritize applying on LinkedIn, leveraging its extensive network and job listings for data-related roles, or Explore Ladders and Snagajob to identify hidden opportunities with less competition and regularly update and optimize your profiles on these platforms to improve visibility and attract recruiters.
 
