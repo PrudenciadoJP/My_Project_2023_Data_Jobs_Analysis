@@ -23,7 +23,9 @@ As an aspiring data analyst and former job seeker, I created this project to pro
 
 - Dataset Source: [GitHub](https://github.com/lukebarousse/Excel_Data_Analytics_Course/tree/main/0_Resources/Datasets)
 - File Size: 3,754 KB
+
 Data Structure:
+
 - job_title_short, job_title, job_location, job_via, job_schedule_type, job_work_from_home, search_location, job_posted_date, job_no_degree_mention, job_health_insurance, job_country, salary_rate, salary_year_avg, salary_hour_avg, company_name, job_skills.
 
 ### Exploratory Data Analysis (EDA) Questions
