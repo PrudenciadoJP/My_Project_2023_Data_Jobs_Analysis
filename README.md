@@ -571,8 +571,11 @@ Type: Clustered Bar Chart
 This project highlights the essential factors for navigating a data-related career. It combines data analysis and visualization to guide aspiring professionals in making informed decisions about their career paths. I hope it inspires others to embrace this field, master the necessary skills, and achieve their career goals.
 
 
+# **This Project Also has a Dashboard Excel Version**
 
+LINK: [Data Jobs Excel Dashboard Version](https://github.com/PrudenciadoJP/My_Project_2023_Data_Jobs_Analysis/tree/08ed76fe8ddf583610052825781d87d80db753b7/data_jobs_monthly_project_Excel_Dashboard_Version)
 
+![ExcelDashboardVersion](https://github.com/user-attachments/assets/e1cdf5b8-1213-408d-904f-e2e76625a17d)
 
 
 
